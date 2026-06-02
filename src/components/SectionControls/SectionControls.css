@@ -22,6 +22,13 @@
   flex-direction: row;
   align-items: center;
   gap: 14px;
+  padding: 12px 18px;
+  border: 1px solid rgba(20, 20, 20, 0.14);
+  border-radius: 999px;
+  background-color: rgba(245, 241, 232, 0.72);
+  color: #141414;
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.16);
+  backdrop-filter: blur(16px);
   transform: translateX(50%);
 }
 
@@ -78,6 +85,7 @@
   height: 12px;
   background-color: currentColor;
   opacity: 1;
+  box-shadow: 0 0 0 4px rgba(20, 20, 20, 0.08);
 }
 
 .section-controls__label {
@@ -103,11 +111,16 @@
   top: -34px;
   left: 50%;
   margin: 0;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background-color: rgba(245, 241, 232, 0.72);
+  color: #141414;
   font-size: 12px;
   letter-spacing: 0.12em;
-  opacity: 0.6;
+  opacity: 0.85;
   transform: translateX(-50%);
   white-space: nowrap;
+  backdrop-filter: blur(16px);
 }
 
 @media screen and (max-width: 720px) {
