@@ -5,27 +5,32 @@ import { sections } from '../utils/sections';
 
 function App() {
   const [activeSection, setActiveSection] = useState('hero');
-  const [visibleControlsSection, setVisibleControlsSection] = useState('hero');
+  const [isHeroControlsDelayed, setIsHeroControlsDelayed] = useState(false);
   const isNavigationLockedRef = useRef(false);
   const touchStartXRef = useRef(null);
+  const heroControlsDelayTimeoutRef = useRef(null);
 
   const activeIndex = sections.findIndex((section) => {
     return section.id === activeSection;
   });
 
-  useEffect(() => {
-    if (activeSection === 'hero') {
-      const controlsDelay = setTimeout(() => {
-        setVisibleControlsSection('hero');
-      }, 500);
+  const visibleControlsSection =
+    activeSection === 'hero' && isHeroControlsDelayed ? 'about' : activeSection;
 
-      return () => {
-        clearTimeout(controlsDelay);
-      };
-    }
+  const startHeroControlsDelay = () => {
+    clearTimeout(heroControlsDelayTimeoutRef.current);
 
-    setVisibleControlsSection(activeSection);
-  }, [activeSection]);
+    setIsHeroControlsDelayed(true);
+
+    heroControlsDelayTimeoutRef.current = setTimeout(() => {
+      setIsHeroControlsDelayed(false);
+    }, 650);
+  };
+
+  const clearHeroControlsDelay = () => {
+    clearTimeout(heroControlsDelayTimeoutRef.current);
+    setIsHeroControlsDelayed(false);
+  };
 
   const goToSectionByIndex = (nextIndex) => {
     const safeIndex = Math.min(Math.max(nextIndex, 0), sections.length - 1);
@@ -35,12 +40,24 @@ function App() {
       return;
     }
 
+    if (nextSection.id === 'hero') {
+      startHeroControlsDelay();
+    } else {
+      clearHeroControlsDelay();
+    }
+
     setActiveSection(nextSection.id);
   };
 
   const goToSection = (sectionId) => {
     if (sectionId === activeSection) {
       return;
+    }
+
+    if (sectionId === 'hero') {
+      startHeroControlsDelay();
+    } else {
+      clearHeroControlsDelay();
     }
 
     setActiveSection(sectionId);
@@ -111,6 +128,12 @@ function App() {
 
     touchStartXRef.current = null;
   };
+
+  useEffect(() => {
+    return () => {
+      clearTimeout(heroControlsDelayTimeoutRef.current);
+    };
+  }, []);
 
   useEffect(() => {
     const handleKeyDown = (event) => {

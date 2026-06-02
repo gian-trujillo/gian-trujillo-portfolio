@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import profileImage from '../../assets/Images/profile.jpg';
+import AboutSection from '../AboutSection/AboutSection';
 
 import SectionControls from '../SectionControls/SectionControls';
 
@@ -55,6 +56,8 @@ function PortfolioLayout({
                         </div>
                         <p className="portfolio__hint">Scroll, swipe, or use arrow keys to explore</p>
                     </>
+                ) : section.id === 'about' ? (
+                    <AboutSection />
                 ) : (
                   <>
                     <p className="portfolio__eyebrow">
