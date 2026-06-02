@@ -1,3 +1,5 @@
+// src/components/SectionControls/SectionControls.jsx
+
 import { motion } from 'motion/react';
 
 function SectionControls({
@@ -7,6 +9,11 @@ function SectionControls({
   onSectionChange,
 }) {
   const isHeroActive = activeSection === 'hero';
+  const visibleHeroNavSections = sections.filter((section) => {
+    return section.id !== 'hero';
+  });
+
+  const displayedSections = isHeroActive ? visibleHeroNavSections : sections;
 
   return (
     <motion.nav
@@ -14,39 +21,49 @@ function SectionControls({
         isHeroActive ? 'section-controls--hero' : 'section-controls--bottom'
       }`}
       aria-label="Portfolio sections"
-      layout
+      initial={false}
+      animate={{
+        opacity: 1,
+      }}
+      transition={{
+        duration: 0.35,
+        ease: 'easeOut',
+      }}
     >
-      {sections.map((section, index) => {
-        const isActive = section.id === activeSection;
+        {displayedSections.map((section) => {
+            const sectionIndex = sections.findIndex((item) => {
+            return item.id === section.id;
+            });
 
-        return (
-          <motion.button
-            className={`section-controls__button ${
-              isActive ? 'section-controls__button--active' : ''
-            }`}
-            key={section.id}
-            type="button"
-            onClick={() => onSectionChange(section.id)}
-            aria-label={`Go to ${section.label}`}
-            aria-current={isActive ? 'page' : undefined}
-            layout
-          >
-            <span className="section-controls__dot"></span>
+            const isActive = section.id === activeSection;
 
-            {isHeroActive && (
-              <span className="section-controls__label">
-                {section.label}
-              </span>
-            )}
+            return (
+            <button
+                className={`section-controls__button ${
+                isActive ? 'section-controls__button--active' : ''
+                }`}
+                key={section.id}
+                type="button"
+                onClick={() => onSectionChange(section.id)}
+                aria-label={`Go to ${section.label}`}
+                aria-current={isActive ? 'page' : undefined}
+            >
+                <span className="section-controls__dot"></span>
 
-            {!isHeroActive && (
-              <span className="section-controls__number">
-                {String(index + 1).padStart(2, '0')}
-              </span>
-            )}
-          </motion.button>
-        );
-      })}
+                {isHeroActive && (
+                <span className="section-controls__label">
+                    {section.label}
+                </span>
+                )}
+
+                {!isHeroActive && (
+                <span className="section-controls__number">
+                    {String(sectionIndex + 1).padStart(2, '0')}
+                </span>
+                )}
+            </button>
+            );
+        })}
 
       {!isHeroActive && (
         <p className="section-controls__counter">

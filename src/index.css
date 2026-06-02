@@ -1,4 +1,4 @@
-@import './App.css';
+@import './components/PortfolioLayout/PortfolioLayout.css';
 @import './components/SectionControls/SectionControls.css';
 
 * {
