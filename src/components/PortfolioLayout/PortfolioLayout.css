@@ -71,19 +71,32 @@
   justify-content: center;
 }
 
+.portfolio__section--hero .portfolio__section-content {
+  justify-content: flex-start;
+  padding-top: 18vh;
+}
+
 .portfolio__intro {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 36px;
 }
 
 .portfolio__photo {
-  width: 148px;
-  height: 190px;
+  width: 156px;
+  height: 204px;
   flex-shrink: 0;
   overflow: hidden;
-  border: 1px solid currentColor;
+  border: 1px solid rgba(245, 241, 232, 0.5);
   border-radius: 999px;
+  background-color: rgba(245, 241, 232, 0.08);
+}
+
+.portfolio__photo-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .portfolio__photo-placeholder {
@@ -117,6 +130,10 @@
   font-size: clamp(48px, 8vw, 112px);
   line-height: 0.9;
   letter-spacing: -0.08em;
+}
+
+.portfolio__section--hero .portfolio__title {
+  font-size: clamp(54px, 8vw, 118px);
 }
 
 .portfolio__subtitle {

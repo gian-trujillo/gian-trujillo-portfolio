@@ -8,7 +8,7 @@
 
 .section-controls--hero {
   position: fixed;
-  top: 65%;
+  top: 55%;
   left: max(24px, calc((100vw - 1120px) / 2));
   flex-direction: column;
   align-items: flex-start;

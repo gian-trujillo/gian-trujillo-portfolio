@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import profileImage from '../../assets/Images/profile.jpg';
 
 import SectionControls from '../SectionControls/SectionControls';
 
@@ -42,7 +43,7 @@ function PortfolioLayout({
                     <>
                         <div className="portfolio__intro">
                             <div className="portfolio__photo">
-                                <span className="portfolio__photo-placeholder">GT</span>
+                                <img src={profileImage} className='portfolio__photo-image' alt="Gian Trujillo" />
                             </div>
 
                             <div className="portfolio__intro-text">
