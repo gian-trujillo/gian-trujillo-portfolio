@@ -28,7 +28,7 @@ function PortfolioLayout({
           ease: [0.76, 0, 0.24, 1],
         }}
       >
-        {sections.map((section) => {
+        {sections.map((section, index) => {
           const isHero = section.id === 'hero';
 
           return (
@@ -39,37 +39,28 @@ function PortfolioLayout({
             >
               <div className="portfolio__section-content">
                 {isHero ? (
-                  <div className="portfolio__intro">
-                    <div className="portfolio__photo">
-                      <span className="portfolio__photo-placeholder">
-                        GT
-                      </span>
-                    </div>
+                    <>
+                        <div className="portfolio__intro">
+                            <div className="portfolio__photo">
+                                <span className="portfolio__photo-placeholder">GT</span>
+                            </div>
 
-                    <div className="portfolio__intro-text">
-                      <p className="portfolio__eyebrow">
-                        Portfolio
-                      </p>
-                      <h1 className="portfolio__title">
-                        {section.title}
-                      </h1>
-                      <p className="portfolio__subtitle">
-                        {section.subtitle}
-                      </p>
-                    </div>
-                  </div>
+                            <div className="portfolio__intro-text">
+                                <p className="portfolio__eyebrow">Portfolio</p>
+                                <h1 className="portfolio__title">{section.title}</h1>
+                                <p className="portfolio__subtitle">{section.subtitle}</p>
+                            </div>
+                        </div>
+                        <p className="portfolio__hint">Scroll, swipe, or use arrow keys to explore</p>
+                    </>
                 ) : (
                   <>
                     <p className="portfolio__eyebrow">
-                      {String(activeIndex + 1).padStart(2, '0')} /{' '}
+                      {String(index + 1).padStart(2, '0')} /{' '}
                       {String(sections.length).padStart(2, '0')}
                     </p>
-                    <h2 className="portfolio__title">
-                      {section.title}
-                    </h2>
-                    <p className="portfolio__subtitle">
-                      {section.subtitle}
-                    </p>
+                    <h2 className="portfolio__title">{section.title}</h2>
+                    <p className="portfolio__subtitle">{section.subtitle}</p>
                   </>
                 )}
               </div>
