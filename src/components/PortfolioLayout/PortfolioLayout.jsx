@@ -6,6 +6,7 @@ import SectionControls from '../SectionControls/SectionControls';
 function PortfolioLayout({
   sections,
   activeSection,
+  visibleControlsSection,
   activeIndex,
   onSectionChange,
   onWheel,
@@ -72,7 +73,8 @@ function PortfolioLayout({
 
       <SectionControls
         sections={sections}
-        activeSection={activeSection}
+        activeSection={visibleControlsSection}
+        realActiveSection={activeSection}
         activeIndex={activeIndex}
         onSectionChange={onSectionChange}
       />

@@ -5,6 +5,7 @@ import { motion } from 'motion/react';
 function SectionControls({
   sections,
   activeSection,
+  realActiveSection,
   activeIndex,
   onSectionChange,
 }) {
@@ -35,7 +36,7 @@ function SectionControls({
             return item.id === section.id;
             });
 
-            const isActive = section.id === activeSection;
+            const isActive = section.id === realActiveSection;
 
             return (
             <button

@@ -5,12 +5,27 @@ import { sections } from '../utils/sections';
 
 function App() {
   const [activeSection, setActiveSection] = useState('hero');
+  const [visibleControlsSection, setVisibleControlsSection] = useState('hero');
   const isNavigationLockedRef = useRef(false);
   const touchStartXRef = useRef(null);
 
   const activeIndex = sections.findIndex((section) => {
     return section.id === activeSection;
   });
+
+  useEffect(() => {
+    if (activeSection === 'hero') {
+      const controlsDelay = setTimeout(() => {
+        setVisibleControlsSection('hero');
+      }, 500);
+
+      return () => {
+        clearTimeout(controlsDelay);
+      };
+    }
+
+    setVisibleControlsSection(activeSection);
+  }, [activeSection]);
 
   const goToSectionByIndex = (nextIndex) => {
     const safeIndex = Math.min(Math.max(nextIndex, 0), sections.length - 1);
@@ -132,6 +147,7 @@ function App() {
     <PortfolioLayout
       sections={sections}
       activeSection={activeSection}
+      visibleControlsSection={visibleControlsSection}
       activeIndex={activeIndex}
       onSectionChange={goToSection}
       onWheel={handleWheel}
