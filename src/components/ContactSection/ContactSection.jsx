@@ -21,10 +21,24 @@ const socialLinks = [
   {
     title: 'GitHub',
     href: 'https://github.com/giantrujillo98',
+    isDownload: false,
   },
   {
     title: 'LinkedIn',
-    href: 'www.linkedin.com/in/gian-trujillo',
+    href: 'https://www.linkedin.com/in/YOUR-LINKEDIN-USERNAME',
+    isDownload: false,
+  },
+  {
+    title: 'CV English',
+    href: '/documents/Gian_Trujillo_CV_en.pdf',
+    fileName: 'Gian_Trujillo_CV_en.pdf',
+    isDownload: true,
+  },
+  {
+    title: 'CV Spanish',
+    href: '/documents/Gian_Trujillo_CV_es.pdf',
+    fileName: 'Gian_Trujillo_CV_es.pdf',
+    isDownload: true,
   },
 ];
 
@@ -94,8 +108,9 @@ function ContactSection() {
                 className="contact__social-link"
                 href={link.href}
                 key={link.title}
-                target="_blank"
-                rel="noreferrer"
+                target={link.isDownload ? undefined : '_blank'}
+                rel={link.isDownload ? link.fileName : undefined}
+                download={link.isDownload ? link.fileName : undefined}
               >
                 {link.title}
               </a>

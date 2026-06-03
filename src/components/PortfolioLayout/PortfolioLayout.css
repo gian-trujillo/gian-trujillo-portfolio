@@ -116,7 +116,7 @@
 }
 
 .portfolio__eyebrow {
-  margin: 0 0 16px;
+  margin: 0 0 20px;
   font-size: 13px;
   line-height: 1;
   letter-spacing: 0.16em;
@@ -130,6 +130,7 @@
   font-size: clamp(48px, 8vw, 112px);
   line-height: 0.9;
   letter-spacing: -0.08em;
+  margin-bottom: 8px;
 }
 
 .portfolio__section--hero .portfolio__title {
