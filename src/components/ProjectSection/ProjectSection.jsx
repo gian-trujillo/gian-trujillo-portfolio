@@ -1,5 +1,5 @@
-import aroundUsImage from '../../assets/images/projects/around-us.jpg';
-import photographySiteImage from '../../assets/images/projects/photography-site.jpg';
+import aroundUsImage from '../../assets/Images/Projects/around-us.jpg';
+import photographySiteImage from '../../assets/Images/Projects/photography-site.jpg';
 
 const projects = [
   {
