@@ -1,5 +1,3 @@
-// src/components/ProjectSection/ProjectSection.jsx
-
 import aroundUsImage from '../../assets/images/projects/around-us.jpg';
 import photographySiteImage from '../../assets/images/projects/photography-site.jpg';
 

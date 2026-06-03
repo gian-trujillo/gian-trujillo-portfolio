@@ -43,41 +43,41 @@ function PortfolioLayout({
               key={section.id}
               aria-label={section.label}
             >
-              <div className="portfolio__section-content">
-                {isHero ? (
-                    <>
-                        <div className="portfolio__intro">
-                            <div className="portfolio__photo">
-                                <img src={profileImage} className='portfolio__photo-image' alt="Gian Trujillo" />
-                            </div>
+                <div className="portfolio__section-content">
+                    {isHero ? (
+                        <>
+                            <div className="portfolio__intro">
+                                <div className="portfolio__photo">
+                                    <img src={profileImage} className='portfolio__photo-image' alt="Gian Trujillo" />
+                                </div>
 
-                            <div className="portfolio__intro-text">
-                                <p className="portfolio__eyebrow">Portfolio</p>
-                                <h1 className="portfolio__title">{section.title}</h1>
-                                <p className="portfolio__subtitle">{section.subtitle}</p>
+                                <div className="portfolio__intro-text">
+                                    <p className="portfolio__eyebrow">Portfolio</p>
+                                    <h1 className="portfolio__title">{section.title}</h1>
+                                    <p className="portfolio__subtitle">{section.subtitle}</p>
+                                </div>
                             </div>
-                        </div>
-                        <p className="portfolio__hint">Scroll, swipe, or use arrow keys to explore</p>
+                            <p className="portfolio__hint">Scroll, swipe, or use arrow keys to explore</p>
+                        </>
+                    ) : section.id === 'about' ? (
+                        <AboutSection />
+                    ) : section.id === 'projects' ? (
+                        <ProjectSection />
+                    ) : section.id === 'skills' ? (
+                        <SkillsSection />
+                    ) : section.id === 'contact' ? (
+                        <ContactSection />
+                    ) : (
+                    <>
+                        <p className="portfolio__eyebrow">
+                        {String(index + 1).padStart(2, '0')} /{' '}
+                        {String(sections.length).padStart(2, '0')}
+                        </p>
+                        <h2 className="portfolio__title">{section.title}</h2>
+                        <p className="portfolio__subtitle">{section.subtitle}</p>
                     </>
-                ) : section.id === 'about' ? (
-                    <AboutSection />
-                ) : section.id === 'projects' ? (
-                    <ProjectSection />
-                ) : section.id === 'skills' ? (
-                    <SkillsSection />
-                ) : section.id === 'contact' ? (
-                    <ContactSection />
-                ) : (
-                  <>
-                    <p className="portfolio__eyebrow">
-                      {String(index + 1).padStart(2, '0')} /{' '}
-                      {String(sections.length).padStart(2, '0')}
-                    </p>
-                    <h2 className="portfolio__title">{section.title}</h2>
-                    <p className="portfolio__subtitle">{section.subtitle}</p>
-                  </>
-                )}
-              </div>
+                    )}
+                </div>
             </section>
           );
         })}

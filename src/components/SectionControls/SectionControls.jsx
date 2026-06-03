@@ -1,5 +1,3 @@
-// src/components/SectionControls/SectionControls.jsx
-
 import { motion } from 'motion/react';
 
 function SectionControls({
@@ -49,7 +47,19 @@ function SectionControls({
                 aria-label={`Go to ${section.label}`}
                 aria-current={isActive ? 'page' : undefined}
             >
-                <span className="section-controls__dot"></span>
+                <span className="section-controls__dot">
+                    {!isHeroActive && isActive && (
+                        <motion.span
+                        className="section-controls__active-indicator"
+                        layoutId="active-section-indicator"
+                        transition={{
+                            type: 'spring',
+                            stiffness: 360,
+                            damping: 38,
+                        }}
+                        />
+                    )}
+                </span>
 
                 {isHeroActive && (
                 <span className="section-controls__label">
