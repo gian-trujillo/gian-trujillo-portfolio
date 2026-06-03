@@ -73,7 +73,7 @@
 
 .portfolio__section--hero .portfolio__section-content {
   justify-content: flex-start;
-  padding-top: 18vh;
+  padding-top: 160px;
 }
 
 .portfolio__intro {
@@ -176,10 +176,14 @@
         padding-left: 30px;
     }
 
+    .portfolio__section--hero .portfolio__section-content {
+      padding-top: 80px;
+    }
+
   .portfolio__section-content {
     width: min(100% - 32px, 1120px);
     min-height: 100vh;
-    padding-top: 40px;
+    /* padding-top: 40px; */
     padding-bottom: 120px;
     /* padding-left: 30px; */
     align-items: flex-start;
@@ -190,6 +194,7 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 24px;
+    /* margin-bottom: 20px; */
   }
 
   .portfolio__photo {
