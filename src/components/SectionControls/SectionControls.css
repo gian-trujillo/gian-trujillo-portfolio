@@ -2,6 +2,7 @@
   z-index: 10;
   display: flex;
   color: inherit;
+  transition: top 0.35s ease-out, bottom 0.35s ease-out, transform 0.35s ease-out;
 }
 
 .section-controls--hero {
@@ -140,7 +141,7 @@
 
 @media screen and (max-width: 720px), screen and (max-height: 760px) {
   .section-controls--bottom {
-    bottom: 18px;
+    /* bottom: 18px; */
     padding: 10px 14px;
   }
 
