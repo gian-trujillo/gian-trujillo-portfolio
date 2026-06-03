@@ -95,6 +95,32 @@ function App() {
       return;
     }
 
+    const currentSectionElement = event.target.closest('.portfolio__section');
+
+    if (currentSectionElement) {
+      const canScrollVertically =
+        currentSectionElement.scrollHeight > currentSectionElement.clientHeight;
+
+      const isAtTop = currentSectionElement.scrollTop === 0;
+
+      const isAtBottom =
+        Math.ceil(currentSectionElement.scrollTop + currentSectionElement.clientHeight) >=
+        currentSectionElement.scrollHeight;
+
+      const isScrollingDown = event.deltaY > 0;
+      const isScrollingUp = event.deltaY < 0;
+
+      if (canScrollVertically) {
+        if (isScrollingDown && !isAtBottom) {
+          return;
+        }
+
+        if (isScrollingUp && !isAtTop) {
+          return;
+        }
+      }
+    }
+
     if (event.deltaY > 0) {
       navigateWithLock(goToNextSection);
       return;

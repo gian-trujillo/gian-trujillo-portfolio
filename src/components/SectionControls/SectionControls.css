@@ -134,3 +134,14 @@
     bottom: 24px;
   }
 }
+
+@media screen and (max-width: 720px), screen and (max-height: 760px) {
+  .section-controls--bottom {
+    bottom: 18px;
+    padding: 10px 14px;
+  }
+
+  .section-controls__counter {
+    display: none;
+  }
+}

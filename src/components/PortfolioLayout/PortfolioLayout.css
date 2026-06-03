@@ -157,10 +157,27 @@
   opacity: 0.48;
 }
 
+@media screen and (max-width: 1000px), screen and (max-height: 760px) {
+  .portfolio__section {
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .portfolio__section-content {
+    min-height: 100vh;
+    justify-content: flex-start;
+    padding-top: 72px;
+    padding-bottom: 128px;
+  }
+}
+
 @media screen and (max-width: 720px) {
   .portfolio__section-content {
     width: min(100% - 32px, 1120px);
-    padding: 40px 0;
+    min-height: 100vh;
+    padding-top: 40px;
+    padding-bottom: 120px;
+    justify-content: flex-start;
   }
 
   .portfolio__intro {
