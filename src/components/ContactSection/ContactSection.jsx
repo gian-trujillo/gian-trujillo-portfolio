@@ -20,12 +20,12 @@ const contactLinks = [
 const socialLinks = [
   {
     title: 'GitHub',
-    href: 'https://github.com/giantrujillo98',
+    href: 'https://github.com/gian-trujillo',
     isDownload: false,
   },
   {
     title: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/YOUR-LINKEDIN-USERNAME',
+    href: 'https://www.linkedin.com/in/gian-trujillo/',
     isDownload: false,
   },
   {

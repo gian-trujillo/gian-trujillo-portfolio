@@ -141,7 +141,7 @@
 
 @media screen and (max-width: 720px), screen and (max-height: 760px) {
   .section-controls--bottom {
-    /* bottom: 18px; */
+    bottom: 18px;
     padding: 10px 14px;
   }
 
