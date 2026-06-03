@@ -38,6 +38,7 @@
 .portfolio__section--hero {
   background-color: #101010;
   color: #f5f1e8;
+  /* align-items: center; */
 }
 
 .portfolio__section--about {
@@ -68,6 +69,7 @@
   padding: 72px 0;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
 }
 
@@ -172,11 +174,17 @@
 }
 
 @media screen and (max-width: 720px) {
+    .portfolio__section--hero {
+        padding-left: 30px;
+    }
+
   .portfolio__section-content {
     width: min(100% - 32px, 1120px);
     min-height: 100vh;
     padding-top: 40px;
     padding-bottom: 120px;
+    /* padding-left: 30px; */
+    align-items: flex-start;
     justify-content: flex-start;
   }
 
@@ -198,7 +206,7 @@
   .portfolio__hint {
     right: auto;
     bottom: 24px;
-    left: 0;
+    /* left: 0; */
     max-width: 220px;
     line-height: 1.4;
   }

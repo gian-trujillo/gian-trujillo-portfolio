@@ -125,9 +125,9 @@
 
 @media screen and (max-width: 720px) {
   .section-controls--hero {
-    top: auto;
+    /* top: auto; */
     bottom: 48px;
-    left: 24px;
+    left: 44px;
   }
 
   .section-controls--bottom {

@@ -195,6 +195,7 @@
   .skills__item {
     min-height: auto;
     padding: 18px;
+    gap: 12px;
   }
 
   .skills__item-main {
@@ -238,6 +239,7 @@
 
   .skills__item {
     border-radius: 22px;
+    flex-direction: column;
   }
 
   .skills__item-main {
