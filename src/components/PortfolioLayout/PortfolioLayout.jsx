@@ -3,6 +3,7 @@ import profileImage from '../../assets/Images/profile.jpg';
 import AboutSection from '../AboutSection/AboutSection';
 import ProjectSection from '../ProjectSection/ProjectSection';
 import SkillsSection from '../SkillsSection/SkillsSection';
+import ContactSection from '../ContactSection/ContactSection';
 
 import SectionControls from '../SectionControls/SectionControls';
 
@@ -64,6 +65,8 @@ function PortfolioLayout({
                     <ProjectSection />
                 ) : section.id === 'skills' ? (
                     <SkillsSection />
+                ) : section.id === 'contact' ? (
+                    <ContactSection />
                 ) : (
                   <>
                     <p className="portfolio__eyebrow">

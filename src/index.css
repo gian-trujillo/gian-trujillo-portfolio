@@ -3,6 +3,7 @@
 @import './components/AboutSection/AboutSection.css';
 @import './components/ProjectSection/ProjectSection.css';
 @import './components/SkillsSection/SkillsSection.css';
+@import './components/ContactSection/ContactSection.css';
 
 * {
   box-sizing: border-box;
