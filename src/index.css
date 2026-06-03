@@ -1,6 +1,7 @@
 @import './components/PortfolioLayout/PortfolioLayout.css';
 @import './components/SectionControls/SectionControls.css';
 @import './components/AboutSection/AboutSection.css';
+@import './components/ProjectSection/ProjectSection.css';
 
 * {
   box-sizing: border-box;

@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import profileImage from '../../assets/Images/profile.jpg';
 import AboutSection from '../AboutSection/AboutSection';
+import ProjectSection from '../ProjectSection/ProjectSection';
 
 import SectionControls from '../SectionControls/SectionControls';
 
@@ -58,6 +59,8 @@ function PortfolioLayout({
                     </>
                 ) : section.id === 'about' ? (
                     <AboutSection />
+                ) : section.id === 'projects' ? (
+                    <ProjectSection />
                 ) : (
                   <>
                     <p className="portfolio__eyebrow">
