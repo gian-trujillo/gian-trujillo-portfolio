@@ -24,7 +24,7 @@ function App() {
 
     heroControlsDelayTimeoutRef.current = setTimeout(() => {
       setIsHeroControlsDelayed(false);
-    }, 650);
+    }, 450);
   };
 
   const clearHeroControlsDelay = () => {

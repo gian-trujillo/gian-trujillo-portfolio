@@ -29,52 +29,52 @@ function SectionControls({
         ease: 'easeOut',
       }}
     >
-        {displayedSections.map((section) => {
-            const sectionIndex = sections.findIndex((item) => {
-            return item.id === section.id;
-            });
+      {displayedSections.map((section) => {
+          const sectionIndex = sections.findIndex((item) => {
+          return item.id === section.id;
+          });
 
-            const isActive = section.id === realActiveSection;
+          const isActive = section.id === realActiveSection;
 
-            return (
-            <button
-                className={`section-controls__button ${
-                isActive ? 'section-controls__button--active' : ''
-                }`}
-                key={section.id}
-                type="button"
-                onClick={() => onSectionChange(section.id)}
-                aria-label={`Go to ${section.label}`}
-                aria-current={isActive ? 'page' : undefined}
-            >
-                <span className="section-controls__dot">
-                    {!isHeroActive && isActive && (
-                        <motion.span
-                        className="section-controls__active-indicator"
-                        layoutId="active-section-indicator"
-                        transition={{
-                            type: 'spring',
-                            stiffness: 360,
-                            damping: 38,
-                        }}
-                        />
-                    )}
-                </span>
+          return (
+          <button
+              className={`section-controls__button ${
+              isActive ? 'section-controls__button--active' : ''
+              }`}
+              key={section.id}
+              type="button"
+              onClick={() => onSectionChange(section.id)}
+              aria-label={`Go to ${section.label}`}
+              aria-current={isActive ? 'page' : undefined}
+          >
+              <span className="section-controls__dot">
+                  {!isHeroActive && isActive && (
+                      <motion.span
+                      className="section-controls__active-indicator"
+                      layoutId="active-section-indicator"
+                      transition={{
+                          type: 'spring',
+                          stiffness: 360,
+                          damping: 38,
+                      }}
+                      />
+                  )}
+              </span>
 
-                {isHeroActive && (
-                <span className="section-controls__label">
-                    {section.label}
-                </span>
-                )}
+              {isHeroActive && (
+              <span className="section-controls__label">
+                  {section.label}
+              </span>
+              )}
 
-                {!isHeroActive && (
-                <span className="section-controls__number">
-                    {String(sectionIndex + 1).padStart(2, '0')}
-                </span>
-                )}
-            </button>
-            );
-        })}
+              {!isHeroActive && (
+              <span className="section-controls__number">
+                  {String(sectionIndex + 1).padStart(2, '0')}
+              </span>
+              )}
+          </button>
+          );
+      })}
 
       {!isHeroActive && (
         <p className="section-controls__counter">

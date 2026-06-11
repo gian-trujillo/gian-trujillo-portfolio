@@ -1,5 +1,6 @@
 import aroundUsImage from '../../assets/Images/Projects/around-us.jpg';
 import photographySiteImage from '../../assets/Images/Projects/photography-site.jpg';
+import losChanchitosImage from '../../assets/Images/Projects/los-chanchitos.jpg';
 
 const projects = [
   {
@@ -28,6 +29,23 @@ const projects = [
     ],
     liveUrl: 'https://skylens.adventphoto.com/',
     githubUrl: 'https://github.com/gian-trujillo/Full-Project.git',
+  },
+  {
+    title: 'Los Chanchitos',
+    type: 'Full-stack restaurant ordering app',
+    description:
+      'A full-stack restaurant ordering website with a customer-facing menu, cart/order flow, backend order handling, and an admin panel for receiving and managing orders in real time.',
+    image: losChanchitosImage,
+    technologies: [
+      'React',
+      'Node.js',
+      'Express',
+      'MongoDB',
+      'Socket.IO',
+      'JWT',
+    ],
+    liveUrl: 'https://loschanchitos.masdiseno.com/',
+    githubUrl: 'https://github.com/gian-trujillo/Los_Chanchitos.git',
   },
 ];
 

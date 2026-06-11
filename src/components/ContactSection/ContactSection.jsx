@@ -10,8 +10,8 @@ const contactLinks = [
   {
     title: 'WhatsApp',
     label: 'Start a quick conversation',
-    value: '+52 81 1037 9315',
-    href: 'https://wa.me/528110379315',
+    value: '+52 81 2019 7769',
+    href: 'https://wa.me/528120197769',
     icon: '↗',
     modifier: 'whatsapp',
   },
