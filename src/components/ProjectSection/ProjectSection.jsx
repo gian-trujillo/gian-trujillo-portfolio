@@ -27,7 +27,7 @@ const projects = [
       'Cloudinary',
       'JWT',
     ],
-    liveUrl: 'https://skylens.adventphoto.com/',
+    liveUrl: 'https://skylensadventures.com/',
     githubUrl: 'https://github.com/gian-trujillo/Full-Project.git',
   },
   {
